@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "357836312212",
+    "project_id": "fchat-1c5b0",
+    "storage_bucket": "fchat-1c5b0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:357836312212:android:7d8be9a5c2da112327ae81",
+        "android_client_info": {
+          "package_name": "com.example.fchat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAd9LcAITdpV1ekirhJ9x2-njvBFy2676Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
