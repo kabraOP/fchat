@@ -1,4 +1,7 @@
 //import 'package:fchat/components/my_button.dart';
+//import 'dart:js';
+
+import 'package:fchat/auth_service.dart';
 import 'package:fchat/components/my_button.dart';
 import 'package:fchat/components/my_text_field.dart';
 import 'package:fchat/components/sq_tile.dart';
@@ -6,13 +9,55 @@ import 'package:flutter/material.dart';
 import 'login_page.dart';
 
 class RegisterPage extends StatelessWidget {
-  const RegisterPage({super.key});
+  final void Function()? onTap;
+  RegisterPage({Key? key, this.onTap}) : super(key: key);
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+  final conformpasswordController = TextEditingController();
+  // @override
+  // State<RegisterPage>createState()=> _RegistorPageState();
 
   @override
   Widget build(BuildContext context) {
-    final emailController = TextEditingController();
-    final passwordController = TextEditingController();
-    final conformpasswordController = TextEditingController();
+    // TODO: implement build
+//     throw UnimplementedError();
+//   }
+
+// }
+//  class _RegistorPageState extends State<RegistorPage>{
+
+//   final emailController = TextEditingController();
+//     final passwordController = TextEditingController();
+//     final conformpasswordController = TextEditingController();
+
+// void singUp() async{
+//   if(passwordController.text != conformpasswordController.text){
+//     ScaffoldMessenger.of(context).showSnackBar(
+//        const SnackBar(content: Text("password not same"),
+//        ),
+//     );
+//     return;
+//   }
+//   //get auth service
+//   final authService = Provider.of<AuthService>(context,listen: false);
+//   try{
+//     await authService.signUpWithEmailAndPassword(
+//       emailController.text,
+//       passwordController.text,
+//     );
+//   } catch(e)
+//   {
+//     ScaffoldMessenger.of(context).showSnackBar(
+//       const SnackBar(content: Text(e.toString()),),
+//     );
+//     }
+
+//   }
+
+// }
+
+    // @override
+    // Widget build(BuildContext context) {
 
     return Scaffold(
       backgroundColor: Colors.grey[300],
