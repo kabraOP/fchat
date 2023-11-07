@@ -1,7 +1,7 @@
 //import 'package:fchat/components/my_button.dart';
 //import 'dart:js';
 
-import 'package:fchat/auth_service.dart';
+//import 'package:fchat/auth_service.dart';
 import 'package:fchat/components/my_button.dart';
 import 'package:fchat/components/my_text_field.dart';
 import 'package:fchat/components/sq_tile.dart';
