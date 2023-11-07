@@ -344,90 +344,91 @@ class MyApp1 extends StatelessWidget {
         appBar: AppBar(
           title: const Text("Year End EMP's Performance"),
         ),
-        body: Column(
-          children: [
-            // Image.asset(
-            //   "images/img.png",
-            //   width: 600,
-            //   height: 120,
-            //   fit: BoxFit.contain,
-            //   alignment: Alignment.center,
-            // ),
-            Expanded(
-              child: Scrollbar(
-                child: ListView.builder(
-                  itemCount: employeeData.length,
-                  itemBuilder: (context, index) => GestureDetector(
-                    onTap: () => {
-                      showDialog(
-                        context: context,
-                        builder: (_) => AlertDialog(
-                          title: Text("Hello ${employeeData[index].name}"),
-                          content: Text("Congrats YOU DID IT "),
-                        ),
-                      ),
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                SecondRoute(employeeInfo: employeeData[index])),
-                      ),
-                    },
-                    child: Card(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 16, vertical: 32),
-                        child: Row(
-                          children: [
-                            Expanded(
-                              /*1*/
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  /*2*/
-                                  Container(
-                                    padding: const EdgeInsets.only(bottom: 8),
-                                    child: Text(
-                                      employeeData[index].name,
-                                      style: const TextStyle(
-                                        fontWeight: FontWeight.bold,
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Image.asset(
+                "images/img.png",
+                width: 600,
+                height: 120,
+                fit: BoxFit.contain,
+                alignment: Alignment.center,
+              ),
+              Column(
+                  children: List.generate(
+                      employeeData.length,
+                      (index) => GestureDetector(
+                            onTap: () => {
+                              showDialog(
+                                context: context,
+                                builder: (_) => AlertDialog(
+                                  title:
+                                      Text("Hello ${employeeData[index].name}"),
+                                  content: Text("Congrats YOU DID IT "),
+                                ),
+                              ),
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SecondRoute(
+                                        employeeInfo: employeeData[index])),
+                              ),
+                            },
+                            child: Card(
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 16, vertical: 32),
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                      /*1*/
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          /*2*/
+                                          Container(
+                                            padding: const EdgeInsets.only(
+                                                bottom: 8),
+                                            child: Text(
+                                              employeeData[index].name,
+                                              style: const TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                          ),
+                                          Text(
+                                            employeeData[index].username,
+                                            style: TextStyle(
+                                              color: Colors.grey[500],
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ),
-                                  ),
-                                  Text(
-                                    employeeData[index].username,
-                                    style: TextStyle(
-                                      color: Colors.grey[500],
+                                    /*3*/
+                                    Text(
+                                      'Rating ',
+                                      style: TextStyle(
+                                        color: Colors.grey[500],
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                    Row(
+                                      children: List.generate(
+                                          employeeData[index].ratings,
+                                          (index) => Icon(
+                                                Icons.star,
+                                                color: Colors.red[500],
+                                              )),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
-                            /*3*/
-                            Text(
-                              'Rating ',
-                              style: TextStyle(
-                                color: Colors.grey[500],
-                              ),
-                            ),
-                            Row(
-                              children: List.generate(
-                                  employeeData[index].ratings,
-                                  (index) => Icon(
-                                        Icons.star,
-                                        color: Colors.red[500],
-                                      )),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            buttonSection,
-          ],
+                          )).toList()),
+              buttonSection,
+            ],
+          ),
         ),
       ),
     );

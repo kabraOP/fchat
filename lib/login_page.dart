@@ -263,6 +263,7 @@ class _LoginPageState extends State<LoginPage> {
 
                         // not a member? register now
                         SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
